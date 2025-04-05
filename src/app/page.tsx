@@ -6,11 +6,11 @@ import WelcomeNotif from "./components/WelcomeNotif";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
-import Image from "next/image";
 
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
+import TechSlider from "./components/MyTechStack";
 
 // Extend Day.js dengan plugin UTC & Timezone
 dayjs.extend(utc);
@@ -171,72 +171,7 @@ export default function Home() {
 
   if (!isClient) return null;
 
-  const techStackIcons = [
-    {
-      name: "HTML5",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg",
-    },
-    {
-      name: "CSS3",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg",
-    },
-    {
-      name: "JavaScript",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    },
-    {
-      name: "PHP",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-    },
-    {
-      name: "Laravel",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
-    },
-    {
-      name: "Vue.js",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-    },
-    {
-      name: "Nuxt.js",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg",
-    },
-    {
-      name: "React",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    },
-    // {
-    //   name: "Flutter",
-    //   url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
-    // },
-    // {
-    //   name: "Dart",
-    //   url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg",
-    // },
-    {
-      name: "Tailwind",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-    },
-    {
-      name: "MySQL",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    },
-    // {
-    //   name: "Python",
-    //   url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    // },
-    {
-      name: "Git",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-    },
-    {
-      name: "GitHub",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-    },
-    {
-      name: "Vercel",
-      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
-    },
-  ];
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-950 via-black to-black flex flex-col items-center py-5 xl:px-40 lg:px-30 md:px-20 px-15">
@@ -327,17 +262,7 @@ export default function Home() {
               <p className="flex items-center font-extrabold"> Skills</p>
             </div>
             <div className="flex flex-col items-center justify-center flex-1 text-center font-mono">
-              <div className="flex flex-wrap gap-4 mb-2">
-                {techStackIcons.map((tech) => (
-                  <div
-                    key={tech.name}
-                    className="flex flex-col items-center mt-auto"
-                  >
-                    <img src={tech.url} alt={tech.name} className="h-10 w-10" />
-                    <p className="text-sm mt-1 text-white/70">{tech.name}</p>
-                  </div>
-                ))}
-              </div>
+              <TechSlider />
               <p className="text-neutral-50/50 italic mt-auto">
                 Click to See Full...
               </p>
