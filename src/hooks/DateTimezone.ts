@@ -1,21 +1,17 @@
-"use client"; // ⬅️ WAJIB ada biar ini cuma render di client
+"use client";
 
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 
-// Extend Day.js dengan plugin UTC & Timezone
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-export default function DateTimezone() {
+export default function useDateTimezone() {
   const [dateTime, setDateTime] = useState({ time: "", date: "" });
-  const [isClient, setIsClient] = useState(false); // ⬅️ Tambah ini biar aman dari SSR
 
   useEffect(() => {
-    setIsClient(true); // Sekarang sudah di client
-
     const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const updateTime = () => {
       setDateTime({
@@ -24,18 +20,10 @@ export default function DateTimezone() {
       });
     };
 
-    updateTime(); // Jalankan langsung biar gak delay
+    updateTime();
     const interval = setInterval(updateTime, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
-  if (!isClient) return null; // ⬅️ Hindari render di server
-
-  return (
-    <>
-      <span className="text-3xl font-bold">{dateTime.time}</span>
-      <span className="text-lg text-gray-400">{dateTime.date}</span>
-    </>
-  );
+  return dateTime;
 }

@@ -1,12 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export const content = [
-    "./src/**/*.{js,ts,jsx,tsx,vue}",
-    "./app/**/*.{js,ts,jsx,tsx,vue}",
-    "./pages/**/*.{js,ts,jsx,tsx,vue}",
-    "./components/**/*.{js,ts,jsx,tsx,vue}",
+  "./src/**/*.{js,ts,jsx,tsx,vue}",
+  "./app/**/*.{js,ts,jsx,tsx,vue}",
+  "./pages/**/*.{js,ts,jsx,tsx,vue}",
+  "./components/**/*.{js,ts,jsx,tsx,vue}",
 ];
 export const theme = {
-    extend: {},
+  extend: {
+    fontFamily: {
+      montserrat: ["var(--font-montserrat)"], // fleksibel
+    },
+  },
 };
 export const plugins = [];
-  
