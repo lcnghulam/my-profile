@@ -8,13 +8,13 @@ import Footer from "@/app/components/Footer";
 import SystemInfo from "@/app/hooks/SystemInfo";
 import DateTimezone from "@/app/hooks/DateTimezone";
 import BatteryNetwork from "@/app/hooks/BatteryNetwork";
-import { MyProfileModal } from "./components/modal/MyProfileModal";
-import TechSlider from "./components/MyTechStack";
-import { MySkillModal } from "./components/modal/MySkillModal";
-import CertificateSlider from "./components/MyCertificate";
-import { MyCertificateModal } from "./components/modal/MyCertificateModal";
-import ProjectSlider from "./components/MyProject";
-import { MyProjectModal } from "./components/modal/MyProjectModal";
+import TechSlider from "@/app/components/MyTechStack";
+import ProjectSlider from "@/app/components/MyProject";
+import CertificateSlider from "@/app/components/MyCertificate";
+import { MyProfileModal } from "@/app/components/modal/MyProfileModal";
+import { MySkillModal } from "@/app/components/modal/MySkillModal";
+import { MyCertificateModal } from "@/app/components/modal/MyCertificateModal";
+import { MyProjectModal } from "@/app/components/modal/MyProjectModal";
 
 export default function Home() {
   // Date & Timezone
