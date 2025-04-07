@@ -11,10 +11,10 @@ import BatteryNetwork from "@/app/hooks/BatteryNetwork";
 import TechSlider from "@/app/components/MyTechStack";
 import ProjectSlider from "@/app/components/MyProject";
 import CertificateSlider from "@/app/components/MyCertificate";
-import MyProfileModal from "@/app/components/modal/MyProfileModal";
-import MySkillModal from "@/app/components/modal/MySkillModal";
-import MyCertificateModal from "@/app/components/modal/MyCertificateModal";
-import MyProjectModal from "@/app/components/modal/MyProjectModal";
+import { MyProfileModal } from "@/app/components/modal/MyProfileModal";
+import { MySkillModal } from "@/app/components/modal/MySkillModal";
+import { MyCertificateModal } from "@/app/components/modal/MyCertificateModal";
+import { MyProjectModal } from "@/app/components/modal/MyProjectModal";
 
 export default function Home() {
   // Date & Timezone

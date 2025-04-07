@@ -41,7 +41,7 @@ const softSkillList = [
 ];
 
 
-const MySkillModal: React.FC<MySkillModalProps> = ({
+export const MySkillModal: React.FC<MySkillModalProps> = ({
   isOpen,
   onClose,
 }) => {
@@ -179,5 +179,3 @@ const MySkillModal: React.FC<MySkillModalProps> = ({
     </div>
   );
 };
-
-export default MySkillModal;

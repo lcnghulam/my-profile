@@ -7,7 +7,7 @@ interface MyProjectModalProps {
   onClose: () => void;
 }
 
-const MyProjectModal: React.FC<MyProjectModalProps> = ({
+export const MyProjectModal: React.FC<MyProjectModalProps> = ({
   isOpen,
   onClose,
 }) => {
@@ -113,5 +113,3 @@ const MyProjectModal: React.FC<MyProjectModalProps> = ({
     </div>
   );
 };
-
-export default MyProjectModal;

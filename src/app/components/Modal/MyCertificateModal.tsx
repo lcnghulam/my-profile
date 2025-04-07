@@ -7,7 +7,7 @@ interface MyCertificateModalProps {
   onClose: () => void;
 }
 
-const MyCertificateModal: React.FC<MyCertificateModalProps> = ({
+export const MyCertificateModal: React.FC<MyCertificateModalProps> = ({
   isOpen,
   onClose,
 }) => {
@@ -90,5 +90,3 @@ const MyCertificateModal: React.FC<MyCertificateModalProps> = ({
     </div>
   );
 };
-
-export default MyCertificateModal;
