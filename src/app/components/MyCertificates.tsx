@@ -12,7 +12,7 @@ const certificateList = [
     name: "Kotlin Dev 2019",
   },
   {
-    name: "Inteks Department 2020",
+    name: "Inteks Department 2018/2019",
   },
   {
     name: "TOEIC",

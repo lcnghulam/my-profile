@@ -12,6 +12,7 @@ import TechSlider from "@/app/components/MyTechStack";
 import CertificateSlider from "@/app/components/MyCertificates";
 import { MyProfileModal } from "@/app/components/Modal/MyProfileModal";
 import { MySkillModal } from "@/app/components/Modal/MySkillModal";
+import { MyCertificateModal } from "@/app/components/Modal/MyCertificates";
 
 export default function Home() {
   // Date & Timezone
@@ -26,20 +27,21 @@ export default function Home() {
   // Modal
   const [profileModalOpen, setProfileModalOpen] = useState(false);
   const [skillModalOpen, setSkillModalOpen] = useState(false);
+  const [certificateModalOpen, setCertificateModalOpen] = useState(false);
 
   // Client
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    const anyModalOpen = profileModalOpen || skillModalOpen;
+    const anyModalOpen = profileModalOpen || skillModalOpen || certificateModalOpen;
 
     document.body.style.overflow = anyModalOpen ? "hidden" : "auto";
 
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [profileModalOpen, skillModalOpen]);
+  }, [profileModalOpen, skillModalOpen, certificateModalOpen]);
 
   if (!isClient) return null;
 
@@ -178,8 +180,11 @@ export default function Home() {
             isOpen={skillModalOpen}
             onClose={() => setSkillModalOpen(false)}
           />
-          <div className="flex flex-col bg-gray-900/40 transition-colors duration-250 hover:bg-gray-800/40 hover:shadow-lg hover:scale-[1.02] ease-in-out transform p-4 rounded-lg overflow-x-hidden">
-            <div className="flex items-center gap-2 mb-2">
+          <div
+            onClick={() => setCertificateModalOpen(true)}
+            className="flex flex-col bg-gray-900/40 transition-colors duration-250 hover:bg-gray-800/40 hover:shadow-lg hover:scale-[1.02] ease-in-out transform p-4 rounded-lg overflow-x-hidden cursor-pointer"
+          >
+            <div className="flex items-center gap-2 mb-2 sm:mb-0">
               <Icon icon="ph:certificate" className="h-6 w-6" />
               <p className="flex items-center font-extrabold"> Certificates</p>
             </div>
@@ -192,6 +197,10 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <MyCertificateModal
+            isOpen={certificateModalOpen}
+            onClose={() => setCertificateModalOpen(false)}
+          />
           <div className="flex flex-col bg-gray-900/40 transition-colors duration-250 hover:bg-gray-800/40 hover:shadow-lg hover:scale-[1.02] ease-in-out transform p-4 rounded-lg overflow-x-hidden">
             <div className="flex items-center gap-2 mb-2">
               <Icon icon="proicons:globe" className="h-6 w-6" />
@@ -204,6 +213,12 @@ export default function Home() {
                 <Icon icon="clarity:email-line" />
                 <span className="mx-auto text-[10px]">
                   lcnghulam1@gmail.com
+                </span>
+              </a>
+              <a href="https://wa.me/+6282334655255" target="_blank" className="inline-flex items-center col-span-2 bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl overflow-x-hidden">
+                <Icon icon="ic:baseline-whatsapp" />
+                <span className="mx-auto text-[10px]">
+                  WhatsApp
                 </span>
               </a>
               <a href="https://fb.com/lcnghulam" target="_blank" className="inline-flex items-center bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl">

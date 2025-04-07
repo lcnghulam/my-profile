@@ -62,8 +62,6 @@ export const MyProfileModal: React.FC<MyProfileModalProps> = ({
             &times;
           </button>
         </div>
-
-        {/* Body scrollable */}
         <div className="modal-body p-6 flex-1 overflow-y-auto">
           <h3 className="text-xl font-bold font-sans tracking-[7] mb-2">
             Introduction
@@ -149,7 +147,7 @@ export const MyProfileModal: React.FC<MyProfileModalProps> = ({
           </div>
           <p className="text-gray-300 text-justify indent-8">
             Setiap orang pasti memiliki impian hidup yg tinggi. Begitu juga saya
-            yg mempunyai cita-cita hidup tinggi yaitu menjadi Full-Stack Web Dev
+            yg mempunyai cita-cita menjadi Full-Stack Web Dev
             & Mobile Dev. Skill yg tinggi pasti dibutuhkan juga di semua
             perusahaan demi bisa berkontribusi besar dalam pengembangan
             teknologi yg dibutuhkan oleh perusahaan untuk kemudahan akses

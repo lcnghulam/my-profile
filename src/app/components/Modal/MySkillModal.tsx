@@ -153,6 +153,40 @@ const techStackIcons = [
   },
 ];
 
+const softSkillList = [
+  {
+    icon: "heroicons-outline:speakerphone",
+    title: "Public Speaking",
+    score: "7.5/10",
+  },
+  {
+    icon: "icon-park-outline:communication",
+    title: "Communication",
+    score: "8/10",
+  },
+  {
+    icon: "garden:relationshape-connect-26",
+    title: "Problem Solving",
+    score: "7.5/10",
+  },
+  {
+    icon: "garden:clock-cycle-stroke-16",
+    title: "Time Management",
+    score: "7.5/10",
+  },
+  {
+    icon: "fluent:people-team-20-regular",
+    title: "Teamwork",
+    score: "9/10",
+  },
+  {
+    icon: "game-icons:relationship-bounds",
+    title: "Adaptability",
+    score: "8/10",
+  },
+];
+
+
 export const MySkillModal: React.FC<MySkillModalProps> = ({
   isOpen,
   onClose,
@@ -271,66 +305,20 @@ export const MySkillModal: React.FC<MySkillModalProps> = ({
             </h3>
           </div>
           <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 gap-4">
-            <div className="bg-gray-800/50 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700/50 transition-colors">
-              <div className="flex items-center justify-between w-full">
-                <Icon
-                  icon="heroicons-outline:speakerphone"
-                  className="w-6 h-6"
-                />
-                <span className="font-mono font-light">Public Speaking</span>
-                <span className="font-mono font-extralight">7.5/10</span>
+            {softSkillList.map((skill, index) => (
+              <div
+                key={index}
+                className="bg-gray-800/50 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700/50 transition-colors"
+              >
+                <div className="flex items-center justify-between w-full">
+                  <Icon icon={skill.icon} className="w-6 h-6" />
+                  <span className="font-mono font-light">{skill.title}</span>
+                  <span className="font-mono font-extralight">
+                    {skill.score}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className="bg-gray-800/50 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700/50 transition-colors">
-              <div className="flex items-center justify-between w-full">
-                <Icon
-                  icon="icon-park-outline:communication"
-                  className="w-6 h-6"
-                />
-                <span className="font-mono font-light">Communication</span>
-                <span className="font-mono font-extralight">8/10</span>
-              </div>
-            </div>
-            <div className="bg-gray-800/50 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700/50 transition-colors">
-              <div className="flex items-center justify-between w-full">
-                <Icon
-                  icon="garden:relationshape-connect-26"
-                  className="w-6 h-6"
-                />
-                <span className="font-mono font-light">Problem Solving</span>
-                <span className="font-mono font-extralight">7.5/10</span>
-              </div>
-            </div>
-            <div className="bg-gray-800/50 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700/50 transition-colors">
-              <div className="flex items-center justify-between w-full">
-                <Icon
-                  icon="garden:clock-cycle-stroke-16"
-                  className="w-6 h-6"
-                />
-                <span className="font-mono font-light">Time Management</span>
-                <span className="font-mono font-extralight">7.5/10</span>
-              </div>
-            </div>
-            <div className="bg-gray-800/50 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700/50 transition-colors">
-              <div className="flex items-center justify-between w-full">
-                <Icon
-                  icon="fluent:people-team-20-regular"
-                  className="w-6 h-6"
-                />
-                <span className="font-mono font-light">Teamwork</span>
-                <span className="font-mono font-extralight">9/10</span>
-              </div>
-            </div>
-            <div className="bg-gray-800/50 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700/50 transition-colors">
-              <div className="flex items-center justify-between w-full">
-                <Icon
-                  icon="game-icons:relationship-bounds"
-                  className="w-6 h-6"
-                />
-                <span className="font-mono font-light">Adaptability</span>
-                <span className="font-mono font-extralight">8/10</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
