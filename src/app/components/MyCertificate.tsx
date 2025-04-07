@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react";
-import { certificateList } from "./data/CertificateList";
+import certificateList from "../data/CertificateList";
 
 export default function CertificateSlider() {
   const [current, setCurrent] = useState(0);

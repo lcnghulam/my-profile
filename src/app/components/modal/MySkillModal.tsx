@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
-import { techStackList } from "@/app/components/data/TechStackList";
+import techStackList from "@/app/data/TechStackList";
 
 interface MySkillModalProps {
   isOpen: boolean;
@@ -61,12 +61,14 @@ export const MySkillModal: React.FC<MySkillModalProps> = ({
         !modalRef.current.contains(event.target as Node)
       ) {
         onClose();
+        setActiveCategory("All")
       }
     }
 
     function handleEscKey(event: KeyboardEvent) {
       if (event.key === "Escape") {
         onClose();
+        setActiveCategory("All");
       }
     }
 
@@ -74,7 +76,7 @@ export const MySkillModal: React.FC<MySkillModalProps> = ({
       document.addEventListener("mousedown", handleClickOutside);
       document.addEventListener("keydown", handleEscKey);
     }
-
+    
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleEscKey);

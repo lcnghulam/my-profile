@@ -1,4 +1,4 @@
-export const techStackList = [
+const techStackList = [
     {
       name: "Laravel",
       type: "image",
@@ -144,3 +144,5 @@ export const techStackList = [
       category: "Design",
     },
   ];
+
+  export default techStackList

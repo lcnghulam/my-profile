@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
-import { projectList } from "@/app/components/data/ProjectList";
+import projectList from "@/app/data/ProjectList";
 
 interface MyProjectModalProps {
   isOpen: boolean;

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
-import { certificateList } from "@/app/components/data/CertificateList";
+import certificateList from "@/app/data/CertificateList";
 
 interface MyCertificateModalProps {
   isOpen: boolean;

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { projectList } from "@/app/components/data/ProjectList";
+import projectList from "@/app/data/ProjectList";
 
 export default function ProjectSlider() {
   const [current, setCurrent] = useState(0);

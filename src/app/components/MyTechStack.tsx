@@ -1,4 +1,4 @@
-import { techStackList } from "./data/TechStackList";
+import techStackList from "../data/TechStackList";
 import { Icon } from "@iconify/react";
 
 export default function TechSlider() {

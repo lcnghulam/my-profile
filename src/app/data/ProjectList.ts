@@ -1,4 +1,4 @@
-export const projectList = [
+const projectList = [
   {
     name: "Klinik Vita Medika Kediri",
     url: "https://vitamedikakediri.com/",
@@ -36,3 +36,5 @@ export const projectList = [
     type: ["Laravel", "Leaflet", "MySQL"],
   },
 ];
+
+export default projectList

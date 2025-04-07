@@ -1,4 +1,4 @@
-export const certificateList = [
+const certificateList = [
   {
     name: "Telkomsel Apprentice Program 2018",
     publisher: "Telkomsel",
@@ -35,3 +35,5 @@ export const certificateList = [
     url: "/images/logo-udemy.png",
   },
 ];
+
+export default certificateList
