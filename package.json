@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@iconify/react": "^5.2.1",
+    "@vercel/speed-insights": "^1.2.0",
     "dayjs": "^1.11.13",
     "framer-motion": "^12.6.2",
     "next": "15.2.4",
