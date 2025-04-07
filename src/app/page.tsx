@@ -5,14 +5,16 @@ import { Icon } from "@iconify/react";
 import Header from "@/app/components/Header";
 import Overlay from "@/app/components/Overlay";
 import Footer from "@/app/components/Footer";
-import SystemInfo from "@/hooks/SystemInfo";
-import DateTimezone from "@/hooks/DateTimezone";
-import BatteryNetwork from "@/hooks/BatteryNetwork";
+import SystemInfo from "@/app/hooks/SystemInfo";
+import DateTimezone from "@/app/hooks/DateTimezone";
+import BatteryNetwork from "@/app/hooks/BatteryNetwork";
 import TechSlider from "@/app/components/MyTechStack";
-import CertificateSlider from "@/app/components/MyCertificates";
-import { MyProfileModal } from "@/app/components/Modal/MyProfileModal";
-import { MySkillModal } from "@/app/components/Modal/MySkillModal";
-import { MyCertificateModal } from "@/app/components/Modal/MyCertificates";
+import CertificateSlider from "@/app/components/MyCertificate";
+import { MyProfileModal } from "@/app/components/modal/MyProfileModal";
+import { MySkillModal } from "@/app/components/modal/MySkillModal";
+import { MyCertificateModal } from "@/app/components/modal/MyCertificateModal";
+import { MyProjectModal } from "./components/modal/MyProjectModal";
+import ProjectSlider from "./components/MyProject";
 
 export default function Home() {
   // Date & Timezone
@@ -28,20 +30,30 @@ export default function Home() {
   const [profileModalOpen, setProfileModalOpen] = useState(false);
   const [skillModalOpen, setSkillModalOpen] = useState(false);
   const [certificateModalOpen, setCertificateModalOpen] = useState(false);
+  const [projectModalOpen, setProjectModalOpen] = useState(false);
 
   // Client
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    const anyModalOpen = profileModalOpen || skillModalOpen || certificateModalOpen;
+    const anyModalOpen =
+      profileModalOpen ||
+      skillModalOpen ||
+      certificateModalOpen ||
+      projectModalOpen;
 
     document.body.style.overflow = anyModalOpen ? "hidden" : "auto";
 
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [profileModalOpen, skillModalOpen, certificateModalOpen]);
+  }, [
+    profileModalOpen,
+    skillModalOpen,
+    certificateModalOpen,
+    projectModalOpen,
+  ]);
 
   if (!isClient) return null;
 
@@ -182,7 +194,7 @@ export default function Home() {
           />
           <div
             onClick={() => setCertificateModalOpen(true)}
-            className="flex flex-col bg-gray-900/40 transition-colors duration-250 hover:bg-gray-800/40 hover:shadow-lg hover:scale-[1.02] ease-in-out transform p-4 rounded-lg overflow-x-hidden cursor-pointer"
+            className="flex flex-col bg-gray-900/40 transition-colors duration-250 hover:bg-gray-800/40 hover:shadow-lg hover:scale-[1.02] ease-in-out transform p-4 rounded-lg overflow-hidden scrollbar-hide cursor-pointer"
           >
             <div className="flex items-center gap-2 mb-2 sm:mb-0">
               <Icon icon="ph:certificate" className="h-6 w-6" />
@@ -201,7 +213,7 @@ export default function Home() {
             isOpen={certificateModalOpen}
             onClose={() => setCertificateModalOpen(false)}
           />
-          <div className="flex flex-col bg-gray-900/40 transition-colors duration-250 hover:bg-gray-800/40 hover:shadow-lg hover:scale-[1.02] ease-in-out transform p-4 rounded-lg overflow-x-hidden">
+          <div className="flex flex-col bg-gray-900/40 transition-colors duration-250 hover:bg-gray-800/40 hover:shadow-lg hover:scale-[1.02] ease-in-out transform p-4 rounded-lg overflow-hidden scrollbar-hide">
             <div className="flex items-center gap-2 mb-2">
               <Icon icon="proicons:globe" className="h-6 w-6" />
               <p className="flex items-center font-extrabold">
@@ -209,48 +221,79 @@ export default function Home() {
               </p>
             </div>
             <div className="grid grid-flow-row-dense grid-cols-2 xs:grid-cols-1 gap-1.5 font-mono px-2">
-              <a href="mailto:lcnghulam1@gmail.com" target="_blank" className="inline-flex items-center col-span-2 bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl overflow-x-hidden">
+              <a
+                href="mailto:lcnghulam1@gmail.com"
+                target="_blank"
+                className="inline-flex items-center col-span-2 bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl overflow-x-hidden"
+              >
                 <Icon icon="clarity:email-line" />
                 <span className="mx-auto text-[10px]">
                   lcnghulam1@gmail.com
                 </span>
               </a>
-              <a href="https://wa.me/+6282334655255" target="_blank" className="inline-flex items-center col-span-2 bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl overflow-x-hidden">
+              <a
+                href="https://wa.me/+6282334655255"
+                target="_blank"
+                className="inline-flex items-center col-span-2 bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl overflow-x-hidden"
+              >
                 <Icon icon="ic:baseline-whatsapp" />
-                <span className="mx-auto text-[10px]">
-                  WhatsApp
-                </span>
+                <span className="mx-auto text-[10px]">WhatsApp</span>
               </a>
-              <a href="https://fb.com/lcnghulam" target="_blank" className="inline-flex items-center bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl">
+              <a
+                href="https://fb.com/lcnghulam"
+                target="_blank"
+                className="inline-flex items-center bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl"
+              >
                 <Icon icon="line-md:facebook" />
                 <span className="mx-auto text-[10px]">lcnghulam</span>
               </a>
-              <a href="https://instagram.com/lcn_ghulam" target="_blank" className="inline-flex items-center bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl">
+              <a
+                href="https://instagram.com/lcn_ghulam"
+                target="_blank"
+                className="inline-flex items-center bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl"
+              >
                 <Icon icon="proicons:instagram" />
                 <span className="mx-auto text-[10px]">lcn_ghulam</span>
               </a>
-              <a href="https://github.com/lcnghulam" target="_blank" className="inline-flex items-center bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl">
+              <a
+                href="https://github.com/lcnghulam"
+                target="_blank"
+                className="inline-flex items-center bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl"
+              >
                 <Icon icon="proicons:github" />
                 <span className="mx-auto text-[10px]">lcnghulam</span>
               </a>
-              <a href="http://linkedin.com/in/ahmad-ghulam-azkiya-778401160/" target="_blank" className="inline-flex items-center bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl">
+              <a
+                href="http://linkedin.com/in/ahmad-ghulam-azkiya-778401160/"
+                target="_blank"
+                className="inline-flex items-center bg-gray-800/35 transition-colors duration-250 hover:bg-gray-400/80 hover:shadow-lg hover:scale-[1.02] ease-in-out transform py-2 px-4 rounded-4xl"
+              >
                 <Icon icon="ri:linkedin-fill" />
                 <span className="mx-auto text-[10px]">A.Ghulam</span>
               </a>
             </div>
           </div>
-          <div className="flex flex-col xl:col-span-2 bg-gray-900/40 transition-colors duration-250 hover:bg-gray-800/40 hover:shadow-lg hover:scale-[1.02]  ease-in-out transform p-4 rounded-lg overflow-x-hidden">
-            <div className="flex items-center gap-2 mb-2">
+          <div
+            onClick={() => setProjectModalOpen(true)}
+            className="flex flex-col xl:col-span-2 bg-gray-900/40 transition-colors duration-250 hover:bg-gray-800/40 hover:shadow-lg hover:scale-[1.02] ease-in-out transform p-4 rounded-lg overflow-x-hidden cursor-pointer"
+          >
+            <div className="flex items-center gap-2 mb-2 sm:mb-0">
               <Icon icon="simple-icons:blueprint" className="h-6 w-6" />
               <p className="flex items-center font-extrabold"> Projects</p>
             </div>
             <div className="flex flex-col items-center justify-center flex-1 text-center font-mono">
-              <div className="inline-flex items-center mt-auto mb-2"></div>
+              <div className="flex items-center mt-auto mb-2">
+                <ProjectSlider />
+              </div>
               <p className="text-neutral-50/50 italic mt-auto">
                 Click to see more...
               </p>
             </div>
           </div>
+          <MyProjectModal
+            isOpen={projectModalOpen}
+            onClose={() => setProjectModalOpen(false)}
+          />
         </div>
       </main>
       <Footer />

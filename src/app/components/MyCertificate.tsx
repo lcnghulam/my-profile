@@ -3,22 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react";
-
-const certificateList = [
-  {
-    name: "Telkomsel Apprentice Program 2018",
-  },
-  {
-    name: "Kotlin Dev 2019",
-  },
-  {
-    name: "Inteks Department 2018/2019",
-  },
-  {
-    name: "TOEIC",
-  },
-  { name: "Flutter & Dart 2025", text: "On Progress..." },
-];
+import { certificateList } from "./data/CertificateList";
 
 export default function CertificateSlider() {
   const [current, setCurrent] = useState(0);
@@ -55,9 +40,9 @@ export default function CertificateSlider() {
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.4 }}
           className="p-4 rounded-lg bg-gray-800/35"
         >
@@ -67,9 +52,6 @@ export default function CertificateSlider() {
               {certificateList[current].name}
             </div>
           </h3>
-          <p className="text-sm text-neutral-400 mt-2">
-            {certificateList[current].text}
-          </p>
         </motion.div>
       </AnimatePresence>
     </div>
