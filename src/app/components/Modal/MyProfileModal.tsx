@@ -6,7 +6,7 @@ interface MyProfileModalProps {
   onClose: () => void;
 }
 
-export const MyProfileModal: React.FC<MyProfileModalProps> = ({
+const MyProfileModal: React.FC<MyProfileModalProps> = ({
   isOpen,
   onClose,
 }) => {
@@ -158,3 +158,5 @@ export const MyProfileModal: React.FC<MyProfileModalProps> = ({
     </div>
   );
 };
+
+export default MyProfileModal;
