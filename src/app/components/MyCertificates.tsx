@@ -7,19 +7,15 @@ import { Icon } from "@iconify/react";
 const certificateList = [
   {
     name: "Telkomsel Apprentice Program 2018",
-    url: "https://1drv.ms/i/c/8bd9dd6eb2ce694a/IQS2MsuwZFV_S6fGrz1OC_vzAaWnOJIgu1QrH2j8a1nj3ks",
   },
   {
     name: "Kotlin Dev 2019",
-    url: "https://1drv.ms/i/c/8bd9dd6eb2ce694a/IQS5HkVvAtKlTLAnEb-glRhcAcGb4hWY-qKJ-3mVi3FiB1w",
   },
   {
     name: "Inteks Department 2020",
-    url: "https://1drv.ms/i/c/8bd9dd6eb2ce694a/IQTztuYIT3GwRZnyqcZIaBfVAfF2b9EfKSL8BGlZ8Neyw9E",
   },
   {
     name: "TOEIC",
-    url: "https://1drv.ms/i/c/8bd9dd6eb2ce694a/IQRaS6nGqz-bRb_cE2WNyYCzASdHBqeTd8AgsECb9aYPj9I",
   },
   { name: "Flutter & Dart 2025", text: "On Progress..." },
 ];
@@ -71,21 +67,9 @@ export default function CertificateSlider() {
               {certificateList[current].name}
             </div>
           </h3>
-
-          {certificateList[current].url ? (
-            <a
-              href={certificateList[current].url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-neutral-400 no-underline mt-2 inline-block"
-            >
-              View Certificate
-            </a>
-          ) : (
-            <p className="text-sm text-neutral-400 mt-2">
-              {certificateList[current].text}
-            </p>
-          )}
+          <p className="text-sm text-neutral-400 mt-2">
+            {certificateList[current].text}
+          </p>
         </motion.div>
       </AnimatePresence>
     </div>

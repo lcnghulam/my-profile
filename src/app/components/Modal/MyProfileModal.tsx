@@ -81,8 +81,8 @@ export const MyProfileModal: React.FC<MyProfileModalProps> = ({
           <p className="text-gray-300 text-justify mb-4 indent-8">
             Nama saya Ahmad Ghulam Azkiya, lahir di Kediri, 8 April 1999 dengan
             pendidikan terakhir D-III Manajemen Informatika, Politeknik Negeri
-            Malang PSDKU Kediri & lulus pada tahun 2020. Alamat KTP: Dsn. Pangkru,
-            Sanankulon, Blitar. Domisili sekarang: Kp.Punden Utara RT03 RW05,
+            Malang PSDKU Kediri & lulus pada tahun 2020. Alamat KTP: Dsn. Pangkru RT03 RW03, Bendowulung,
+            Sanankulon, Blitar, Jawa Timur. Domisili sekarang: Kp.Punden Utara RT03 RW05,
             Kutoharjo, Kaliwungu, Kendal, Jawa Tengah.
           </p>
 
