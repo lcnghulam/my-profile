@@ -8,6 +8,17 @@
    🚀 Selamat Datang di Profil Pribadi saya!
    🎨 Desain minimalis & interaktif
  </p>
+
+## 📊 **Github Stats**
+
+<div align="center">
+  <p>
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=lcnghulam&theme=tokyonight&hide_border=false" width="360"/>
+  </p>
+  <p>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lcnghulam&theme=tokyonight&show_icons=true&hide_border=false&layout=compact" width="360"/>
+  </p>
+</div>
  
  ## 🌐 **Socials**
  [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:lcnghulam1@gmail.com)
@@ -71,11 +82,24 @@
  - Also: Capcut, Picsart, Snapseed
  
  ## 🛠 **My Projects**
- 
- - ✅ ****
- - ✅ ****
- - ✅ ****
- - ✅ ****
+
+<div>
+ <p>
+  ✅ webgis-petani-desa-bedug
+ </p>
+ <p>
+  ✅ cek-mentimun-kkn
+ </p>
+ <p>
+  ✅ vita-medika
+ </p>
+ <p>
+  ✅ proto-struk-simple
+ </p>
+ <p>
+  ✅ my-profile
+ </p>
+</div>
  
  ---
  <p align="center">
