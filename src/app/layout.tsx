@@ -24,6 +24,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "AGA Dev | Digital Space",
   description: "Welcome to My Profile Buddies!",
+  verification: { google: "FfhoRqI1YQLAPK51toWCWC_QiTvJ7pIoIfc4C-sfcyc" },
 };
 
 export default function RootLayout({
