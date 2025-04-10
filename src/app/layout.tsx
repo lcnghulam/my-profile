@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 // Import font dan assign ke variable
 const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-montserrat', // Optional: untuk custom property
-})
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-montserrat", // Optional: untuk custom property
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +24,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "AGA Dev | Digital Space",
   description: "Welcome to My Profile Buddies!",
-  verification: { google: "FfhoRqI1YQLAPK51toWCWC_QiTvJ7pIoIfc4C-sfcyc" },
+  verification: { google: "pAeL2ssmmNHVjOzdrDWkyqmX3bQI5K4dk6P0a__wOi4" },
 };
 
 export default function RootLayout({
@@ -38,8 +38,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
       >
         {children}
-        <Analytics/>
-        <SpeedInsights/>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
